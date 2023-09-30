@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --background: rgb(0, 19, 23);
+    --header: rgb(0, 37, 37);
+    --logo: rgb(200, 246, 255);
+}
+a {
+    text-decoration: none;
+}
+input,
+button {
+    outline: none;
+}
+li {
+    list-style: none;
+}
+body {
+    background: var(--background);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--header);
+    width: 100vw;
+    position: fixed;
+    padding: 0.3rem 0.7rem;
+}
+.header .logo {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.header #logo {
+    width: 40px;
+    height: 40px;
+    object-fit: fill;
+    background: cover;
+    margin: 0 0.5rem;
+}
+.logo h1 {
+    color: var(--logo);
+    margin-left: 0.5rem;
+    font-family: serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+    word-spacing: 2px;
+    text-shadow: -2px -0 2px rgb(200, 246, 255);
+}
+.header .links {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.links a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    margin: 0.2rem 1.2rem;
+    font-size: 20px;
+}
+
+/**************************************
+*      MEDIA QUERY BREAKPOINTS        *
+***************************************/
+/**************************************
+*       DESKTOP BREAKPOINTS           *
+***************************************/
+@media screen and (max-width: 1400px) {
+    .header .mobile-nav {
+        display: none;
+    }
+}
+/**************************************
+*         LAPTOP BREAKPOINTS          *
+***************************************/
+@media screen and (max-width: 1200px) {
+    .header .mobile-nav {
+        display: none;
+    }
+}
+/**************************************
+*          TAB BREAKPOINTS            *
+***************************************/
+@media screen and (max-width: 900px) {
+    .header .mobile-nav {
+        display: none;
+    }
+}
+/**************************************
+*         MOBILE BREAKPOINTS          *
+***************************************/
+@media screen and (max-width: 450px) {
+    .links,
+    .links a {
+        display: none;
+    }
+    .header .mobile-nav {
+        display: block;
+    }
+    .mobile-nav #nav-btn {
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+    }
+    .logo h1 {
+        font-size: 23px;
+    }
+}
