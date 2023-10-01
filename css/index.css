@@ -67,7 +67,30 @@ body {
     font-weight: 700;
     margin: 0.2rem 1.2rem;
     font-size: 20px;
+    transition: 0.3s ease-in all;
 }
+.links a:hover {
+    color: rgb(255, 98, 18);
+}
+/*===========ANIMATION==========*/
+@keyframes menu {
+    0% {
+        transform: translateX(-60%);
+    }
+    20% {
+        transform: translateX(0.2);
+    }
+    50% {
+        transform: translateX(0.5);
+    }
+    80% {
+        transform: translateX(0.7);
+    }
+    100% {
+        transform: translateX(1);
+    }
+}
+/*===========ANIMATION==========*/
 
 /**************************************
 *      MEDIA QUERY BREAKPOINTS        *
@@ -79,6 +102,9 @@ body {
     .header .mobile-nav {
         display: none;
     }
+    .mobile-menu {
+        display: none;
+    }
 }
 /**************************************
 *         LAPTOP BREAKPOINTS          *
@@ -87,12 +113,18 @@ body {
     .header .mobile-nav {
         display: none;
     }
+    .mobile-menu {
+        display: none;
+    }
 }
 /**************************************
 *          TAB BREAKPOINTS            *
 ***************************************/
 @media screen and (max-width: 900px) {
     .header .mobile-nav {
+        display: none;
+    }
+    .mobile-menu {
         display: none;
     }
 }
@@ -114,5 +146,44 @@ body {
     }
     .logo h1 {
         font-size: 23px;
+    }
+    /*
+  MOBILE MRNU NAV BAR
+*/
+    .mobile-menu {
+        width: 60%;
+        height: 100vh;
+        background: rgb(0, 16, 19);
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: menu 0.2s linear;
+    }
+    .mobile-menu h3 {
+        text-align: center;
+        color: rgb(5, 187, 255);
+        padding: 0.5rem;
+        font-size: 24px;
+    }
+    .mobile-menu a {
+        margin: 0.7rem;
+        width: 80%;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 20px;
+        display: inline-block;
+        transition: 0.2s ease-in;
+        box-shadow: none;
+    }
+    .mobile-menu a:hover {
+        background: rgb(0, 44, 52);
+        color: rgb(218, 108, 0);
+        transition: 0.3s ease-in;
     }
 }
