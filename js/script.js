@@ -3,7 +3,13 @@ function ghs__(tag) {
     return document.querySelector(tag);
 }
 
-let heading = document.querySelector(".heading");
+var type = ghs__(".typewriter");
+var ghsLogo = ghs__("#ghs-logo");
+let heading = ghs__(".heading");
+var navBtn = ghs__("#nav-btn");
+var div = ghs__(".mobile-menu"),
+    isopen = div.getAttribute("isopen");
+
 let count = 0;
 let countTwo = heading.dataset.title.length;
 var colors = [
@@ -14,12 +20,32 @@ var colors = [
     "rgb(255,151,10)",
     "rgb(255,93,10)",
 ];
+var task = [
+    "Core PHP Developer",
+    "JavaScript Developer",
+    "Back-End Developer",
+    "Professional Website Developer",
+    "Nodejs & Express Developer",
+    "Python Developer",
+    "Programmer",
+];
+var img = [
+    "ghs1.png",
+    "ghs1.png",
+    "ghs1.png",
+    "ghs1.png",
+    "ghs2.png",
+    "ghs2.png",
+    "ghs2.png",
+    "ghs3.png",
+    "ghs3.png",
+    "ghs3.png",
+];
 setInterval(() => {
     var randomIndex = Math.floor(Math.random() * colors.length);
     heading.style.color = colors[randomIndex];
 }, 1000);
 setTimeout(myFunc, 1000);
-
 function myFunc() {
     let name = heading.dataset.title;
     heading.innerHTML = "";
@@ -47,48 +73,27 @@ function myFunc() {
         }
     }
 }
-
+ghs__(".container").onclick = () => {
+    div.style.display = "none";
+    navBtn.src = "icons/burger-menu.svg";
+    div.setAttribute("isopen", "false");
+};
 ghs__(".mobile-nav").onclick = () => {
-    var div = ghs__(".mobile-menu"),
-        isopen = div.getAttribute("isopen");
     if (isopen === "false") {
+        navBtn.src = "icons/cross.svg";
         div.setAttribute("isopen", "true");
         div.style.display = "block";
     } else {
+        navBtn.src = "icons/burger-menu.svg";
         div.setAttribute("isopen", "false");
         div.style.display = "none";
     }
 };
-
-var type = ghs__(".typewriter");
-var ghsLogo = ghs__("#ghs-logo");
-
-var task = [
-    "Core PHP Developer",
-    "JavaScript Developer",
-    "Back-End Developer",
-    "Professional Website Developer",
-    "Nodejs & Express Developer",
-    "Python Developer",
-    "Programmer",
-];
-var img = [
-    "ghs1.png",
-    "ghs1.png",
-    "ghs1.png",
-    "ghs1.png",
-    "ghs2.png",
-    "ghs2.png",
-    "ghs2.png",
-    "ghs3.png",
-    "ghs3.png",
-    "ghs3.png"
-    ]
 setInterval(() => {
     var index = Math.floor(Math.random() * task.length);
     var imgIndex = Math.floor(Math.random() * img.length);
     var colorIndex = Math.floor(Math.random() * colors.length);
     type.style.color = colors[colorIndex];
     type.textContent = task[index];
-    ghsLogo.src=`images/${img[imgIndex]}`
+    ghsLogo.src = `images/${img[imgIndex]}`;
 }, 6000);
