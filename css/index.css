@@ -146,6 +146,7 @@ body {
         text 3s steps(50) alternate infinite;
 }
 .col .content {
+  top :0;
   line-height: 2.1rem;
   font-size: 19px;
   font-family: Sans-Serif;
@@ -155,7 +156,7 @@ body {
   color: #ffffff;
   text-transform: capitalize;
   word-spacing: 2.5px;
-  margin :.5rem;
+  margin :0;
   padding :1rem 0;
 }
 
