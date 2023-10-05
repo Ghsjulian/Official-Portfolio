@@ -30,16 +30,10 @@ var task = [
     "Programmer",
 ];
 var img = [
-    "ghs1.png",
-    "ghs1.png",
-    "ghs1.png",
-    "ghs1.png",
-    "ghs2.png",
-    "ghs2.png",
     "ghs2.png",
     "ghs3.png",
-    "ghs3.png",
-    "ghs3.png",
+    "ghs4.png",
+    "ghs5.png"
 ];
 setInterval(() => {
     var randomIndex = Math.floor(Math.random() * colors.length);
